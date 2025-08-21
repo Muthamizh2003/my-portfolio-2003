@@ -1,0 +1,101 @@
+.footer
+{
+    margin:50px 170px;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+.footer-top
+{
+    display: flex;
+    justify-content: space-between;
+}
+.footer-top-left
+{
+    font-size: 20px;
+    max-width: 400px;
+}
+.footer-top-right
+{
+    display: flex;
+    align-items: center;
+    gap:35px;
+}
+.footer-email-input
+{
+    display: flex;
+    gap:30px;
+    padding:20px 30px;
+    border-radius: 50px;
+    background: #32323B;
+    padding-right: 80px;
+}
+.footer-email-input input
+{
+    outline: none;
+    border: none;
+    font-family: Outfit;
+    color:#a0a0a0;
+    background: transparent;
+    font-size: 18px;
+}
+.footer-subscribe
+{
+    font-size: 20px;
+    padding:22px 50px;
+    border-radius: 50px;
+    background: linear-gradient(267deg,#DA7c25 -5.08%,#B923E1 102.06%);
+    cursor: pointer;
+    transition: 0.3s;
+}
+.footer-bottom{
+    display:flex;
+    justify-content: space-between;
+    font-size: 18px;
+}
+.footer-bottom-right
+{
+    display:flex;
+    gap:50px;
+    margin-bottom: 50px;
+}
+.footer-email-input:hover
+{
+    border:2px solid whitesmoke
+}
+.footer-subscribe:hover{
+    transform: scale(1.1);
+    transition: 0.3s;
+}
+@media (max-width: 768px) {
+    .footer {
+        margin: 50px 20px;
+    }
+
+    .footer-top {
+        flex-direction: column;
+        display: flex;
+        gap: 30px; /* Reduced the gap for better fit */
+    }
+    .footer-subscribe {
+        font-size: 18px; /* Adjust the font size for mobile */
+        padding: 15px 30px; /* Adjust padding for smaller screens */
+        width: auto; /* Let the button size naturally */
+        text-align: center; /* Center the text inside the button */
+        margin-top: 10px; /* Space between input and button */
+        display: inline-block; /* Align next to the input field */
+        align-items: center;
+    }
+    .footer-bottom {
+        display: flex;
+        flex-direction: column-reverse;
+        align-items: center; /* Center content */
+        gap: 20px; /* Add gap between reversed elements */
+        margin-bottom: 100%; /* Adjusted margin for better spacing */
+    }
+
+    .footer-bottom-right {
+        justify-content: center; /* Center links */
+        gap: 30px; /* Adjust gap between footer links */
+    }
+}

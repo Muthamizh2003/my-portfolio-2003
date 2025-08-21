@@ -1,0 +1,234 @@
+.my-work {
+  padding: 5rem 2rem;
+  color: white;
+  text-align: center;
+}
+.my-work h2 {
+  font-size: 2.5rem;
+  margin-bottom: 0.5rem;
+  display: inline-block; /* shrink to text width */
+  padding: 0.5rem 1.2rem; /* adjust spacing inside the rectangle */
+  background: linear-gradient(90deg, #00c9ff, #92fe9d);
+  color: white; /* text color */
+  border-radius: 12px; /* smooth corners */
+  box-shadow: 0 4px 15px rgba(0, 201, 255, 0.4), 0 4px 15px rgba(146, 254, 157, 0.3); /* optional neon glow */
+}
+
+
+.section-subtitle {
+  font-size: 1.1rem;
+  opacity: 0.8;
+  margin-bottom: 3rem;
+}
+
+.projects-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+}
+
+.ipad {
+  width: 100%;
+  max-width: 800px;
+  background: linear-gradient(135deg, #e6e6e6, #ffffff);
+  border-radius: 24px;
+  padding: 25px;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4),
+              0 0 0 4px #343434,
+              0 0 0 8px #8d8d8d,
+              0 0 0 12px #343434,
+              0 0 20px rgba(0, 0, 0, 0.6);
+  transform-style: preserve-3d;
+  transition: transform 0.5s ease;
+}
+
+.ipad:hover {
+  transform: translateY(-5px) rotateX(5deg);
+}
+
+.ipad-screen {
+  background-color: #1a1a1a;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.8);
+  border: 2px solid #2c2c2c;
+}
+
+.project-display {
+  display: flex;
+  flex-direction: column;
+}
+
+.project-image {
+  width: 100%;
+  height: 300px;
+  object-fit: cover;
+  border-bottom: 2px solid #333;
+}
+
+.project-details {
+  padding: 1rem 1.5rem; /* reduced vertical padding */
+  text-align: left;
+  color: #333;
+  background-color: #f8f8f8;
+  border-radius: 12px;
+}
+
+.project-details h3 {
+  font-size: 1.5rem;
+  margin-bottom: 0.3rem;
+  color: #222;
+}
+
+.project-details p {
+  margin-bottom: 0.8rem;
+  line-height: 1.4;
+  color: #555;
+}
+
+.tech-stack {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+  margin-top: 0.8rem;
+}
+
+.tech-tag {
+  background: linear-gradient(90deg, #00c9ff, #92fe9d);
+  color: #222;
+  padding: 0.25rem 0.6rem;
+  border-radius: 16px;
+  font-size: 0.75rem;
+  font-weight: 600;
+}
+
+.ipad-buttons {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 1rem; /* reduced */
+  padding: 0 0.5rem;
+}
+
+.nav-button {
+  background: linear-gradient(135deg, #8d8d8d, #616161);
+  border: none;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  color: white;
+  font-size: 1.2rem;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  transition: all 0.3s ease;
+}
+
+.nav-button:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.4);
+}
+
+.action-buttons {
+    cursor: pointer;
+  display: flex;
+  gap: 1rem;
+  margin-top: 0.8rem;
+}
+
+.action-button {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.6rem 1.2rem;
+  border-radius: 30px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.code-link {
+  background: linear-gradient(90deg, #00c9ff, #92fe9d);
+  color: #222;
+}
+
+.github-link {
+  background: linear-gradient(90deg, #6e45e2, #88d3ce);
+  color: white;
+}
+
+.action-button:hover {
+  transform: translateY(-3px);
+  cursor: pointer;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+}
+
+.project-indicators {
+  display: flex;
+  gap: 0.6rem;
+  margin-top: 0.8rem;
+}
+
+.indicator {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  border: none;
+  background-color: rgba(255, 255, 255, 0.3);
+  transition: all 0.3s ease;
+}
+
+.indicator.active {
+  background-color: #00c9ff;
+  transform: scale(1.2);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .ipad {
+    padding: 15px;
+  }
+  
+  .project-image {
+    height: 200px;
+  }
+  
+  .action-buttons {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+  
+  .ipad-buttons {
+    flex-direction: column;
+    gap: 0.8rem;
+  }
+  
+  .nav-button {
+    width: 40px;
+    height: 40px;
+  }
+}
+
+@media (max-width: 480px) {
+  .my-work {
+    padding: 3rem 1rem;
+  }
+  
+  .ipad {
+    border-radius: 16px;
+    padding: 10px;
+  }
+  
+  .project-details {
+    padding: 0.8rem 1rem;
+  }
+  
+  .project-details h3 {
+    font-size: 1.2rem;
+  }
+  
+  .action-button {
+    padding: 0.5rem 1rem;
+    font-size: 0.85rem;
+  }
+}

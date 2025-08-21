@@ -1,0 +1,73 @@
+.about {
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  gap: 6rem; /* more space between image and text */
+  padding: 8rem 4rem;
+  width: 100%;
+  min-height: 100vh;
+  flex-wrap: wrap;
+}
+
+.about-left img {
+  width: 450px; /* bigger image */
+  height: auto;
+  border-radius: 20px; /* smooth rectangle */
+  object-fit: cover;
+  box-shadow: 0 10px 30px rgba(255, 255, 255, 0.2);
+}
+
+.about-right {
+  flex: 2;
+  max-width: 900px;
+}
+
+.about-right h2 {
+  font-size: 3rem; /* bigger heading */
+  margin-bottom: 2rem;
+  color: white;
+}
+
+.about-right p {
+  font-size: 1.6rem; /* bigger text */
+  line-height: 2;
+  margin-bottom: 1.5rem;
+  color: white;
+}
+
+.highlight {
+  color: #6c63ff;
+  font-weight: bold;
+}
+
+/* Neon animated text */
+.about-right h2, .about-right p {
+  background: linear-gradient(90deg, #6c63ff, #ffffff, #6c63ff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: textGlow 5s linear infinite;
+}
+
+
+/* Mobile responsive */
+@media (max-width: 768px) {
+  .about {
+    flex-direction: column;
+    text-align: center;
+    padding: 6rem 2rem;
+    gap: 3rem;
+  }
+
+  .about-left img {
+    width: 250px;         /* smaller for mobile */
+  }
+
+  .about-right h2 {
+    font-size: 2.5rem;
+  }
+
+  .about-right p {
+    font-size: 1.2rem;
+    line-height: 1.8;
+  }
+}

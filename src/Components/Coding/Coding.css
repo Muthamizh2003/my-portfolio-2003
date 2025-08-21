@@ -1,0 +1,295 @@
+.coding-section {
+  padding: 3rem 2rem;
+  text-align: center;
+  color: white;
+  min-height: 100vh;
+}
+
+.coding-section h2 {
+  font-size: 2.5rem;
+  margin-bottom: 0.5rem;
+  background: linear-gradient(90deg, #00c9ff, #92fe9d);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.section-subtitle {
+  font-size: 1.1rem;
+  opacity: 0.8;
+  margin-bottom: 3rem;
+}
+
+/* iPad Frame */
+.ipad-frame {
+  max-width: 900px;
+  margin: 0 auto;
+  background: linear-gradient(135deg, #e6e6e6, #ffffff);
+  border-radius: 30px;
+  padding: 25px;
+  box-shadow: 0 25px 50px rgba(0,0,0,0.4),
+              0 0 0 4px #343434,
+              0 0 0 8px #8d8d8d,
+              0 0 0 12px #343434,
+              0 0 20px rgba(0,0,0,0.6);
+}
+
+.ipad-screen {
+  background-color: #1a1a1a;
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: inset 0 0 15px rgba(0,0,0,0.8);
+  border: 2px solid #2c2c2c;
+  position: relative;
+  height: 600px;
+}
+
+/* Status Bar */
+.status-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.5rem 1rem;
+  background-color: rgba(50,50,50,0.9);
+  color: white;
+  font-size: 0.9rem;
+}
+
+.status-icons {
+  display: flex;
+  gap: 0.5rem;
+}
+
+/* Home Screen */
+.home-screen {
+  padding: 2rem;
+  height: calc(100% - 40px);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.app-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+.app-icon {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.app-icon:hover {
+  transform: scale(1.1);
+}
+
+.app-icon-circle {
+  width: 60px;
+  height: 60px;
+  border-radius: 18px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 0.5rem;
+  color: white;
+  font-size: 1.5rem;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+}
+
+.app-icon span {
+  color: white;
+  font-size: 0.9rem;
+}
+
+.app-icon-circle.small {
+  width: 24px;
+  height: 24px;
+  border-radius: 6px;
+  font-size: 0.8rem;
+  margin-right: 0.5rem;
+}
+
+/* Dock */
+.dock {
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
+  padding: 0.8rem;
+  background: rgba(100,100,100,0.4);
+  backdrop-filter: blur(10px);
+  border-radius: 20px;
+  margin: 0 auto;
+  width: fit-content;
+}
+
+.dock-icon {
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.dock-icon:hover {
+  transform: translateY(-8px) scale(1.2);
+}
+
+.dock-icon .app-icon-circle {
+  width: 50px;
+  height: 50px;
+  margin-bottom: 0;
+}
+
+/* App Windows */
+.app-window {
+  pointer-events: none;
+  position: absolute;
+  top: 40px;
+  left: 0;
+  width: 100%;
+  height: calc(100% - 40px);
+  background-color: rgba(30,30,30,0.98);
+  z-index: 10;
+  transform: translateY(-50px) scale(0.95);
+  opacity: 0;
+  transition: all 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+  border-radius: 15px;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 15px 25px rgba(0,0,0,0.5);
+}
+
+.app-window.active {
+  transform: translateY(0) scale(1);
+  pointer-events: all;
+  opacity: 1;
+}
+
+/* App Header */
+.app-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.8rem 1rem;
+  background-color: rgba(50,50,50,0.9);
+  border-bottom: 1px solid #444;
+}
+
+.app-header-left {
+  display: flex;
+  align-items: center;
+  color: white;
+}
+
+.close-btn {
+  background: none;
+  border: none;
+  color: white;
+  cursor: pointer;
+  font-size: 1.2rem;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  z-index: 20;
+  transition: all 0.2s ease;
+}
+
+.close-btn:hover {
+  background-color: rgba(255,255,255,0.15);
+  transform: scale(1.1);
+}
+
+/* App Content */
+.app-content {
+  padding: 2rem;
+  flex: 1;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: white;
+}
+
+.app-details {
+  max-width: 500px;
+  text-align: center;
+}
+
+.app-details h3 {
+  font-size: 1.8rem;
+  margin-bottom: 1rem;
+  color: #00c9ff;
+}
+
+.app-details p {
+  margin-bottom: 1.5rem;
+  line-height: 1.6;
+}
+
+.stats {
+  background: rgba(0,201,255,0.1);
+  padding: 1rem;
+  border-radius: 10px;
+  margin-bottom: 1.5rem;
+}
+
+.achievements {
+  margin-bottom: 2rem;
+}
+
+.achievements h4 {
+  font-size: 1.2rem;
+  margin-bottom: 0.8rem;
+  color: #92fe9d;
+}
+
+.achievements ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.achievements li {
+  padding: 0.5rem 0;
+  border-bottom: 1px solid #444;
+}
+
+.achievements li:last-child {
+  border-bottom: none;
+}
+
+.profile-link-btn {
+  display: inline-block;
+  background: linear-gradient(90deg, #00c9ff, #92fe9d);
+  color: #222;
+  padding: 0.8rem 1.5rem;
+  border-radius: 25px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+}
+
+.profile-link-btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 15px rgba(0,0,0,0.4);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .ipad-screen { height: 500px; }
+  .app-grid { grid-template-columns: repeat(2,1fr); gap:1.5rem; }
+  .dock-icon .app-icon-circle { width: 40px; height: 40px; }
+}
+
+@media (max-width: 480px) {
+  .ipad-screen { height: 400px; }
+  .app-grid { gap:1rem; }
+  .app-icon-circle { width:50px; height:50px; font-size:1.2rem; }
+  .dock-icon .app-icon-circle { width:35px; height:35px; font-size:1rem; }
+}

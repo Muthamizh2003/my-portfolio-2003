@@ -1,0 +1,252 @@
+.skills-section {
+  padding: 3rem 2rem;
+  text-align: center;
+  color: white;
+  min-height: 100vh;
+  position: relative;
+  overflow: hidden;
+}
+
+.skills-section::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  
+  pointer-events: none;
+}
+
+.neon-title {
+  font-size: 3rem;
+  margin-bottom: 0.5rem;
+  color: #fff;
+  text-shadow: 
+    0 0 5px #fff,
+    0 0 10px #fff,
+    0 0 20px #00f3ff,
+    0 0 30px #00f3ff,
+    0 0 40px #00f3ff;
+  animation: neon-flicker 2s infinite alternate;
+}
+
+.section-subtitle.neon-subtitle {
+  font-size: 1.2rem;
+  opacity: 0.8;
+  margin-bottom: 3rem;
+  text-shadow: 0 0 10px rgba(255, 255, 255, 0.7);
+}
+
+@keyframes neon-flicker {
+  0%, 19%, 21%, 23%, 25%, 54%, 56%, 100% {
+    text-shadow: 
+      0 0 5px #fff,
+      0 0 10px #fff,
+      0 0 20px #00f3ff,
+      0 0 30px #00f3ff,
+      0 0 40px #00f3ff;
+  }
+  20%, 24%, 55% {
+    text-shadow: none;
+  }
+}
+
+.neon-container {
+  position: relative;
+  width: 100%;
+  max-width: 900px;
+  height: 500px;
+  margin: 0 auto;
+  border-radius: 20px;
+  backdrop-filter: blur(5px);
+  border: 1px solid rgba(0, 243, 255, 0.3);
+  box-shadow: 
+    0 0 10px rgba(0, 243, 255, 0.5),
+    inset 0 0 20px rgba(0, 243, 255, 0.1);
+  overflow: hidden;
+}
+
+.cyber-grid {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: 
+    linear-gradient(rgba(0, 243, 255, 0.1) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(0, 243, 255, 0.1) 1px, transparent 1px);
+  background-size: 20px 20px;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.neon-bubble {
+  position: absolute;
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  animation: neon-float 6s ease-in-out infinite;
+  transform: translateZ(0);
+  will-change: transform;
+  z-index: 1;
+  background: rgba(20, 20, 40, 0.8);
+  border: 1px solid var(--neon-color);
+  box-shadow: 
+    0 0 5px var(--neon-color),
+    inset 0 0 10px var(--neon-color);
+}
+
+.neon-bubble:hover {
+  transform: scale(1.15) translateZ(0);
+  z-index: 10;
+  box-shadow: 
+    0 0 15px var(--neon-color),
+    0 0 30px var(--neon-color),
+    inset 0 0 20px var(--neon-color);
+}
+
+.neon-bubble::before {
+  content: '';
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  right: -2px;
+  bottom: -2px;
+  border-radius: 50%;
+  background: transparent;
+  z-index: -1;
+  filter: blur(5px);
+}
+
+.neon-glow {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  background: var(--neon-color);
+  opacity: 0.1;
+  filter: blur(5px);
+  z-index: -1;
+  animation: pulse 3s infinite alternate;
+}
+
+@keyframes pulse {
+  0% { opacity: 0.1; }
+  100% { opacity: 0.3; }
+}
+
+.bubble-content {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+}
+
+.neon-bubble h3 {
+  font-size: 1rem;
+  margin: 0;
+  font-weight: 600;
+  color: #fff;
+  text-shadow: 0 0 5px var(--neon-color);
+}
+
+.skill-level {
+  font-size: 0.8rem;
+  opacity: 0.9;
+  margin-top: 0.5rem;
+  padding: 0.2rem 0.6rem;
+  border-radius: 20px;
+  background: rgba(255, 255, 255, 0.15);
+  color: #fff;
+  text-shadow: 0 0 3px var(--neon-color);
+  display: inline-block;
+}
+
+@keyframes neon-float {
+  0%, 100% {
+    transform: translateY(0) translateX(0) rotate(0deg);
+    box-shadow: 
+      0 0 5px var(--neon-color),
+      inset 0 0 10px var(--neon-color);
+  }
+  25% {
+    transform: translateY(-5px) translateX(3px) rotate(1deg);
+    box-shadow: 
+      0 0 8px var(--neon-color),
+      inset 0 0 12px var(--neon-color);
+  }
+  50% {
+    transform: translateY(3px) translateX(-3px) rotate(-1deg);
+    box-shadow: 
+      0 0 10px var(--neon-color),
+      inset 0 0 15px var(--neon-color);
+  }
+  75% {
+    transform: translateY(-3px) translateX(5px) rotate(1deg);
+    box-shadow: 
+      0 0 12px var(--neon-color),
+      inset 0 0 18px var(--neon-color);
+  }
+}
+
+/* Different neon colors based on skill level */
+.neon-bubble[data-level="advanced"] {
+  --neon-color: #00f3ff; /* Cyan */
+}
+
+.neon-bubble[data-level="intermediate"] {
+  --neon-color: #ff00ff; /* Magenta */
+}
+
+.neon-bubble[data-level="beginner"] {
+  --neon-color: #ffb347; /* Orange */
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .neon-container {
+    height: 400px;
+  }
+  
+  .neon-bubble {
+    width: 100px;
+    height: 100px;
+  }
+  
+  .neon-bubble h3 {
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .skills-section {
+    padding: 2rem 1rem;
+  }
+  
+  .neon-title {
+    font-size: 2.2rem;
+  }
+  
+  .neon-container {
+    height: 350px;
+  }
+  
+  .neon-bubble {
+    width: 80px;
+    height: 80px;
+  }
+  
+  .neon-bubble h3 {
+    font-size: 0.8rem;
+  }
+  
+  .skill-level {
+    font-size: 0.7rem;
+  }
+}
